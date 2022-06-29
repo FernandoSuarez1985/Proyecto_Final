@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+  
+  Listar Maraton
+  
+{% endblock%}
+
+{% block contenido %}
+
+  <br>
+  <p>&nbsp;Listar Maraton</p>
+
+  {% for maraton in carreras %}
+    <div class="card" style="width: 18rem; margin-left: 1rem;">
+      {% if maraton.cover %}
+        <img src="{{maraton.cover.url}}" class="card-img-top" alt="...">
+        
+      {% endif %}
+      
+      <div class="card-body">
+        <h5 class="card-title">{{maraton.nombre}}</h5>
+        <p class="card-text">{{maraton.surname}}</p>
+        <p class="card-text">{{maraton.active}}</p>
+        <p class="card-text">{{maraton.age}}</p>
+        <a href="#" class="btn btn-primary">{{maraton.number}}</a>
+      </div>
+    </div>
+  <br>
+
+  {% endfor%}
+
+{% endblock %}

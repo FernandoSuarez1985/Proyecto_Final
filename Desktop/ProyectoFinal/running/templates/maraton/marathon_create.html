@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Crear Maraton
+{% endblock%}
+
+{% block contenido %}
+Crear Maraton
+
+{% if form %}
+<table>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <table>
+      {{form.as_table}}
+    </table>
+    <br>
+    <input type="submit", value="Enviar">&nbsp;<input type="reset", value="Borrar">
+  </form>
+</table>
+
+{% elif new_marathon %}
+
+  <div class="card" style="width: 18rem; margin-left: 1rem;">
+
+    {% if new_marathon.cover %}
+
+      <img src="{{new_marathon.cover.url}}" class="card-img-top" alt="...">
+        
+    {% endif %}
+      
+    <div class="card-body">
+      <h5 class="card-title">{{new_marathon.nombre}}</h5>
+      <p class="card-text">{{new_marathon.surname}}</p>
+      <p class="card-text">{{new_marathon.active}}</p>
+      <p class="card-text">{{new_marathon.age}}</p>
+      <a href="#" class="btn btn-primary">{{new_marathon.number}}</a>
+    </div>
+  </div>
+    
+{% endif %}
+
+{% endblock %}

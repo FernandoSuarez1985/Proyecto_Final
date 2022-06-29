@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Detalle de Carrera
+{% endblock %}
+
+{% block contenido %}
+<h1 style="margin-left:30rem">Aca va el detalles de Carrera</h1>
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{object.name}}</h5>
+            <p class="card-text">{{object.age}}</p>
+            <p class="card-text">{{object.number}}</p>
+            <a href="/carreras/update_maraton/{{object.id}}/" class="btn btn-primary">Editar</a>
+            <a href="/products/delete_maraton/{{object.id}}/" class="btn btn-danger">Eliminar</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
